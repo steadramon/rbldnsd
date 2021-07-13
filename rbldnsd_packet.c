@@ -321,7 +321,7 @@ int replypacket(struct dnspacket *pkt, unsigned qlen, struct zone *zone) {
 
   if (h[p_f1] & (pf1_opcode | pf1_aa | pf1_tc | pf1_qr)) {
     h[p_f1] = pf1_qr;
-    refuse(DNS_R_NOTIMPL);
+    refuse(DNS_R_NOERROR);
   }
   h[p_f1] |= pf1_qr;
   if (qry.q_class == DNS_C_IN)
